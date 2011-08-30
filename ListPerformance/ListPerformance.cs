@@ -13,10 +13,10 @@ namespace ListPerformance
 	
 		public void TestAddRemoveLinked(int size)
 		{
-			LinkedList<int> list = new LinkedList<int>();
-			for (int i = 0; i < size; i++)
+			var list = new LinkedList<int>();
+			for (var i = 0; i < size; i++)
 				list.AddLast(i);
-			for (int r = 0; r < REPS; r++) {
+			for (var r = 0; r < REPS; r++) {
                  list.AddFirst(77);
                  list.RemoveFirst();
             }			
@@ -24,10 +24,10 @@ namespace ListPerformance
 
 		public void TestAddRemoveArray(int size)
 		{
-			IList<int> list = new List<int>(size);
-			for (int i = 0; i < size; i++)
+			var list = new List<int>(size);
+			for (var i = 0; i < size; i++)
 				list.Add(i);
-			for (int r = 0; r < REPS; r++) {
+			for (var r = 0; r < REPS; r++) {
                  list.Insert(0, 77);
                  list.RemoveAt(0);
             }			
@@ -35,21 +35,21 @@ namespace ListPerformance
 
 		public void TestRandomAccessLinked(int size)
 		{
-			LinkedList<int> list = new LinkedList<int>();
-			for (int i = 0; i < size; i++)
+			var list = new LinkedList<int>();
+			for (var i = 0; i < size; i++)
 				list.AddLast(i);
 			int sum = 0;
-			for (int r = 0; r < list.Count; r++)
+			for (var r = 0; r < list.Count; r++)
                 sum += list.Find(r).Value;
 		}
 
 		public void TestRandomAccessArray(int size)
 		{
-			IList<int> list = new List<int>(size);
-			for (int i = 0; i < size; i++)
+			var list = new List<int>(size);
+			for (var i = 0; i < size; i++)
 				list.Add(i);
 			int sum = 0;
-			for (int r = 0; r < list.Count; r++)
+			for (var r = 0; r < list.Count; r++)
                 sum += list[r];
 		}
 
